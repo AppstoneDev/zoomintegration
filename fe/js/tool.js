@@ -40,13 +40,13 @@ var testTool = {
         document.getElementById("display_name").value
       ),
       pwd: document.getElementById("meeting_pwd").value,
-      role: parseInt(document.getElementById("meeting_role").value, 10),
+      role: 0,
       email: testTool.b64EncodeUnicode(
         document.getElementById("meeting_email").value
       ),
-      lang: document.getElementById("meeting_lang").value,
+      lang: "en-US",
       signature: "",
-      china: document.getElementById("meeting_china").value,
+      china: 0,
     };
   },
   createZoomNode: function (id, url) {

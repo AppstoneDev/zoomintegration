@@ -13,7 +13,7 @@ new WebpackDevServer(webpack(webpackConfig), {
   publicPath: '/static',
   hot: true,
   host: '0.0.0.0',
-  open: 'chrome',
+  open: 'google-chrome',
   after(app, server) {
   },
   headers: {
