@@ -79,7 +79,7 @@ module.exports = {
         ? 'https://0.0.0.0:9999'
         : 'http://0.0.0.0:9999'
     },
-    open: 'chrome',
+    open: 'google-chrome',
     openPage: https ? 'https://127.0.0.1:9999' : 'http://127.0.0.1:9999'
   },
   mode: 'development',

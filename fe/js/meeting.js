@@ -23,7 +23,11 @@ const meetingConfig = {
     );
   })(),
   passWord: tmpArgs.pwd,
-  leaveUrl: "/index.html",
+  leaveUrl: `/index.html?user_name=${testTool.b64DecodeUnicode(
+    tmpArgs.name
+  )}&&user_email=${testTool.b64DecodeUnicode(tmpArgs.email)}&&meeting_number=${
+    tmpArgs.mn
+  }&&meeting_pwd=${tmpArgs.pwd}`,
   role: parseInt(tmpArgs.role, 10),
   userEmail: (function () {
     try {
@@ -79,22 +83,21 @@ function beginJoin(signature) {
     },
   });
 
-  ZoomMtg.inMeetingServiceListener('onUserJoin', function (data) {
-    console.log('inMeetingServiceListener onUserJoin', data);
+  ZoomMtg.inMeetingServiceListener("onUserJoin", function (data) {
+    console.log("inMeetingServiceListener onUserJoin", data);
   });
 
-  ZoomMtg.inMeetingServiceListener('onUserLeave', function (data) {
-    console.log('inMeetingServiceListener onUserLeave', data);
+  ZoomMtg.inMeetingServiceListener("onUserLeave", function (data) {
+    console.log("inMeetingServiceListener onUserLeave", data);
   });
 
-  ZoomMtg.inMeetingServiceListener('onUserIsInWaitingRoom', function (data) {
-    console.log('inMeetingServiceListener onUserIsInWaitingRoom', data);
+  ZoomMtg.inMeetingServiceListener("onUserIsInWaitingRoom", function (data) {
+    console.log("inMeetingServiceListener onUserIsInWaitingRoom", data);
   });
 
-  ZoomMtg.inMeetingServiceListener('onMeetingStatus', function (data) {
-    console.log('inMeetingServiceListener onMeetingStatus', data);
+  ZoomMtg.inMeetingServiceListener("onMeetingStatus", function (data) {
+    console.log("inMeetingServiceListener onMeetingStatus", data);
   });
-  
 }
 
 beginJoin(meetingConfig.signature);
