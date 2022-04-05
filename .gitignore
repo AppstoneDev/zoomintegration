@@ -2,3 +2,5 @@ be/node_modules
 be/.env
 fe/node_modules
 fe/.env
+nextjs/node_modules
+nextjs/.next
